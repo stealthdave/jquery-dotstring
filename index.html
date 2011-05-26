@@ -4,7 +4,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>$.string -- Prototype String functions for jQuery</title>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-		<script type="text/javascript" src="jquery.string.current.js"></script>
+		<script type="text/javascript">
+			jQuery.noConflict();
+		</script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.6.0.2/prototype.js"></script>
+		<script type="text/javascript" src="jquery.string.1.0.1.js"></script>
 		<script type="text/javascript" src="jquery.string.testsuite.js"></script>
 		<script type="text/javascript">
 			
@@ -24,7 +28,7 @@
 			#testresults {
 				font-family: "Courier New", Courier, monospace;
 				font-size: 11pt;
-				width: 300pt;
+				width: 500pt;
 				text-align: right;
 				padding: 10pt;
 				border: 1px dashed #900;
@@ -57,12 +61,11 @@
 				<em>$.string</em> requires jQuery 1.2.2 or later.  It may work with earlier versions, but only these have been tested.  <em>$.string</em> has been tested with the following web browsers:
 			</p>
 			<ul>
-				<li>Firefox 2.x</li>
-				<li>Firefox 3.x</li>
-				<li>Internet Explorer 6</li>
-				<li>Internet Explorer 7</li>
+				<li>Chrome 11+ (probably works with earlier versions)</li>
+				<li>Firefox 2.x, 3.x or 4.x</li>
+				<li>Internet Explorer 6, 7, 8 or 9</li>
 				<li>Opera 9.5</li>
-				<li>Safari 3.x</li>
+				<li>Safari 3.x, 4.x, and 5.x</li>
 			</ul>
 			<p><a href="#top">^ top</a></p>
 		</div>
@@ -71,7 +74,7 @@
 			Include jQuery and $.string in your header:
 			<div class="code">
 				&lt;script type="text/javascript" src="jquery-latest.min.js"&gt;&lt;/script&gt;<br />
-				&lt;script type="text/javascript" src="jquery.string.1.0.js"&gt;&lt;/script&gt;
+				&lt;script type="text/javascript" src="jquery.string.1.0.1.js"&gt;&lt;/script&gt;
 			</div>
 			<em>$.string</em> methods are the same as their Prototype counterparts.  Unlike Prototype, <em>$.string</em>
 			does <em>not</em> by default extend the String JavaScript prototype.  You must create a $.string
@@ -96,6 +99,10 @@
 				"   &lt;p&gt;this is a test&lt;/p&gt;   ".strip().stripTags().capitalize()<br />
 				<span class="pass">> 'This is a test'</span>
 			</div>
+			<em>$.string</em>'s compatibility target is <em>Prototype 1.6.0.2</em>. Latest Prototype version is
+			<em>1.7.0.0</em>, however this introduced an incompatibility with the <em>toJSON</em> method, so
+			it was decided to maintain 1.6.0.2 compatibility as this is more of a legacy/transition project.
+			All other methods pass their compatibility tests in <em>1.7.0.0</em>.
 			<p><a href="#top">^ top</a></p>
 		</div>
 		<h2><a name="credits"></a>Credits and License</h2>
@@ -103,8 +110,8 @@
 			<p>
 				<strong>COPYRIGHT</strong><br />
 				jquery.string - Prototype string functions for jQuery<br />
-				(c) 2008 David E. Still (<a href="http://stilldesigning.com">http://stilldesigning.com</a>)<br />
-	 			Original Prototype extensions (c) 2005-2008 Sam Stephenson (<a href="http://prototypejs.org">http://prototypejs.org</a>)
+				(c) 2008-2011 David E. Still (<a href="http://stilldesigning.com">http://stilldesigning.com</a>)<br />
+	 			Original Prototype extensions (c) 2005-2011 Sam Stephenson (<a href="http://prototypejs.org">http://prototypejs.org</a>)
 			</p>
 			<p>
 				<strong>LICENSE</strong><br />
@@ -132,10 +139,11 @@
 		<h2><a name="download"></a>Download</h2>
 		<div class="text">
 			<p>
-				<a href="jquery.string.current.js">jquery.string.1.0.js</a> - $.string 1.0 - uncompressed (16k)<br />
-				<a href="jquery.string.current-min.js">jquery.string.1.0-min.js</a> - $.string 1.0 - minified (5.0k)<br />
-				<a href="jquery.string.testsuite.js">jquery.string.testsuite.js</a> - $.string Test Suite (9.1k)
+				<a href="jquery.string.1.0.1.js">jquery.string.1.0.1.js</a> - $.string - uncompressed (14.2k)<br />
+				<a href="jquery.string.1.0.1-min.js">jquery.string.1.0.1-min.js</a> - $.string - minified (4.8k)<br />
+				<a href="jquery.string.testsuite.js">jquery.string.testsuite.js</a> - $.string Test Suite (16.8k)
 			</p>
+			<strong>$.string</strong> is also available through SVN on Google Code 
 			<p><a href="#top">^ top</a></p>
 		</div>
 		<h2><a name="test"></a>Test Results</h2>
