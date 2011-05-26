@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>$.string -- Prototype String functions for jQuery</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.string.current.js"></script>
+		<script type="text/javascript" src="jquery.string.testsuite.js"></script>
+		<script type="text/javascript">
+			
+		</script>
+		<style type='text/css'>
+			body { background: #fff; }
+			div.text {
+				padding: 10pt;
+				background: #9ff;
+			}
+			div.code {
+				background: #ff9;
+				padding: 5pt 20pt;
+				margin: 10pt 0;
+				font-family: "Courier New", Courier, monospace;
+			}
+			#testresults {
+				font-family: "Courier New", Courier, monospace;
+				font-size: 11pt;
+				width: 300pt;
+				text-align: right;
+				padding: 10pt;
+				border: 1px dashed #900;
+				margin: 20pt 0;
+			}
+			#testresults span.test {
+				float: left;
+			}
+			.pass { color: blue; font-weight: bold; }
+			.fail { color: red; font-weight: bold; }
+		</style>
+	</head>
+	<body>
+		<h1><a name="top"></a>$.string -- Prototype String functions for jQuery</h1>
+		<div class="text">
+			<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#usage">Usage</a></li>
+				<li><a href="#credits">Credits and License</a></li>
+				<li><a href="#download">Download</a></li>
+				<li><a href="#test">Test Results</a></li>
+			</ul>
+		</div>
+		<h2><a name="about"></a>About $.string</h2>
+		<div class="text">
+			<p>
+				<a href="http://www.jquery.com">jQuery</a> is a fantastic javascript library with excellent CSS selector capabilities and DOM manipulation.  It's light-weight and really fast.  Prototype is an excellent all-purpose library with many great utility features, including string manipulation, enumerable arrays and hashes.  I love using <a href="http://www.jquery.com">jQuery</a> for its speed and simplicity, but I miss Prototype's utilities.  Luckily, <a href="http://www.jquery.com">jQuery</a> is very extensible with its versatile plugin system.  <em>$.string</em> is a plugin which aims to provide Prototype's string manipulation functions to <a href="http://www.jquery.com">jQuery</a>.
+			</p>
+			<p>
+				<em>$.string</em> requires jQuery 1.2.2 or later.  It may work with earlier versions, but only these have been tested.  <em>$.string</em> has been tested with the following web browsers:
+			</p>
+			<ul>
+				<li>Firefox 2.x</li>
+				<li>Firefox 3.x</li>
+				<li>Internet Explorer 6</li>
+				<li>Internet Explorer 7</li>
+				<li>Opera 9.5</li>
+				<li>Safari 3.x</li>
+			</ul>
+			<p><a href="#top">^ top</a></p>
+		</div>
+		<h2><a name="usage"></a>Usage</h2>
+		<div class="text">
+			Include jQuery and $.string in your header:
+			<div class="code">
+				&lt;script type="text/javascript" src="jquery-latest.min.js"&gt;&lt;/script&gt;<br />
+				&lt;script type="text/javascript" src="jquery.string.1.0.js"&gt;&lt;/script&gt;
+			</div>
+			<em>$.string</em> methods are the same as their Prototype counterparts.  Unlike Prototype, <em>$.string</em>
+			does <em>not</em> by default extend the String JavaScript prototype.  You must create a $.string
+			object:
+			<div class="code">
+				$.string("   ").blank();<br />
+				<span class="pass">> true</span>
+			</div>
+			All methods that do not return a String will produce the same result as the Prototype counterpart.
+			<em>blank</em> returns boolean, <em>evalJSON</em> returns a JSON object, etc.  For methods that
+			<em>do</em> return a string, $.string will return another $.string object.  This allows you to
+			chain $.string methods without needing to extend String.  You can retrieve the string portion
+			of the object using the '<span class="pass">str</span>' property.
+			<div class="code">
+				$.string("   &lt;p&gt;this is a test&lt;/p&gt;   ").strip().stripTags().capitalize().str<br />
+				<span class="pass">> 'This is a test'</span>
+			</div>
+			$.string can also be used to extend the String prototype in the same manner that Prototype does,
+			giving you the same functionality and compatibility.
+			<div class="code">
+				$.string(String.prototype);<br />
+				"   &lt;p&gt;this is a test&lt;/p&gt;   ".strip().stripTags().capitalize()<br />
+				<span class="pass">> 'This is a test'</span>
+			</div>
+			<p><a href="#top">^ top</a></p>
+		</div>
+		<h2><a name="credits"></a>Credits and License</h2>
+		<div class="text">
+			<p>
+				<strong>COPYRIGHT</strong><br />
+				jquery.string - Prototype string functions for jQuery<br />
+				(c) 2008 David E. Still (<a href="http://stilldesigning.com">http://stilldesigning.com</a>)<br />
+	 			Original Prototype extensions (c) 2005-2008 Sam Stephenson (<a href="http://prototypejs.org">http://prototypejs.org</a>)
+			</p>
+			<p>
+				<strong>LICENSE</strong><br />
+				Permission is hereby granted, free of charge, to any person obtaining a copy
+				of this software and associated documentation files (the "Software"), to deal
+				in the Software without restriction, including without limitation the rights
+				to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+				copies of the Software, and to permit persons to whom the Software is
+				furnished to do so, subject to the following conditions:
+			</p>
+			<p>
+				THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+				IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+				FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+				AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+				LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+				OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+				SOFTWARE.
+			</p>
+			<p>
+				(The astute reader will note that this is the same license that Prototype is released under.)
+			</p>
+			<p><a href="#top">^ top</a></p>
+		</div>
+		<h2><a name="download"></a>Download</h2>
+		<div class="text">
+			<p>
+				<a href="jquery.string.current.js">jquery.string.1.0.js</a> - $.string 1.0 - uncompressed (16k)<br />
+				<a href="jquery.string.current-min.js">jquery.string.1.0-min.js</a> - $.string 1.0 - minified (5.0k)<br />
+				<a href="jquery.string.testsuite.js">jquery.string.testsuite.js</a> - $.string Test Suite (9.1k)
+			</p>
+			<p><a href="#top">^ top</a></p>
+		</div>
+		<h2><a name="test"></a>Test Results</h2>
+		<div class="text">
+			<p>
+				Below is the results of the compatibility test suite for <em>$.string</em>.  A <span class="fail">Failed!</span> test
+				will also list the number of the test(s) that failed.  If you find additional test cases that can
+				be added that cover conditions not adequately represented by the existing test suite, please contact
+				<span class="pass">dave &lt;at&gt; stilldesigning &lt;dot&gt; com</span>.
+			</p>
+			<p><a href="#top">^ top</a></p>
+		</div>
+		<div id="testresults"></div>
+		<div class="text">
+			<p><a href="#top">^ top</a></p>
+		</div>
+	</body>
+</html>
