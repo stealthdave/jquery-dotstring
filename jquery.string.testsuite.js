@@ -389,6 +389,10 @@ jQuery(document).ready(function() {
 				}
 				catch(e){ attempt = false; }
 			}
+			if (attempt === false) {
+				passed = false;
+				failed.push(i);
+			}
 			
 			//console.log(testsP[i]);
 			timeTrialStartP = new Date().valueOf();
@@ -400,7 +404,7 @@ jQuery(document).ready(function() {
 				catch(e){ attemptP = false; }
 			}
 			//attempt = tests[i]();
-			if (!attemptP) {
+			if (attemptP === false) {
 				passedP = false;
 				failedP.push(i);
 			}
