@@ -1,7 +1,7 @@
 /**
  * jquery.string - Prototype string functions for jQuery
- * version: 1.0.1
- * (c) 2011 David E. Still (http://stilldesigning.com)
+ * version: 1.1b
+ * (c) 2008-2011 David E. Still (http://stilldesigning.com)
  * Original Prototype extensions (c) 2005-2011 Sam Stephenson (http://prototypejs.org)
  */
 
@@ -341,8 +341,6 @@
 			 * @return {Object} .string object (or string if internal)
 			 */
 			this.toJSON = function(s) {
-				//this.str = this.inspect(true, this.s(s));
-				//return this;
 				return this.inspect(true, this.s(s));
 			};
 			/**
