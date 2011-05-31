@@ -1,6 +1,6 @@
 /**
  * jquery.string - Prototype string functions for jQuery
- * version: 1.1b
+ * version: 1.1.0
  * (c) 2008-2011 David E. Still (http://stilldesigning.com)
  * Original Prototype extensions (c) 2005-2011 Sam Stephenson (http://prototypejs.org)
  */
